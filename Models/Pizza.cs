@@ -18,6 +18,5 @@ namespace la_mia_pizzeria_static
         public string Image { get; set; }
         public decimal Price { get; set; }
 
-        
     }
 }
