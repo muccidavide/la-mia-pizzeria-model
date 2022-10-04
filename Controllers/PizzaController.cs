@@ -4,6 +4,7 @@ namespace la_mia_pizzeria_static.Controllers
 {
     public class PizzaController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
 
@@ -23,12 +24,12 @@ namespace la_mia_pizzeria_static.Controllers
             myMenu.Add(pizzaQuattroFormaggi);
             myMenu.Add(pizzaBianca);
 
-            myMenu.Clear();
+            //myMenu.Clear();
 
             return View("Index", myMenu);
         }
 
-        public IActionResult SinglePizza(int id)
+        public IActionResult Details(int id)
         {
 
             /// FAKE DB
@@ -49,7 +50,7 @@ namespace la_mia_pizzeria_static.Controllers
 
             Pizza pizza = myMenu[id];
 
-            return View("SinglePizza",pizza);
+            return View("Show", myMenu[id]);
         }
     }
 }

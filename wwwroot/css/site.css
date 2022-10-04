@@ -18,6 +18,9 @@ html {
     box-sizing:border-box;
 }
 
+img{
+    max-width:100%;
+}
 .nav.navbar-nav.navbar-right li a {
     color: white;
 }
