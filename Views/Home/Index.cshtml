@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_MyLayout";
+
+    Pizza pizzaMargherita = new("margherita", "pizza margherita", "/img/img-1.jpg", 33.3m);
+    Pizza pizzaNapoli = new("napoli", "pizza napoli", "/img/img-2.jpeg", 13);
+    Pizza pizzaBufala = new("bufala", "pizza bufala", "/img/img-3.jpeg", 15.5m);
+    Pizza pizzaMarinara = new("marinara", "pizza marinara", "/img/img-1.jpg", 33.3m);
+    Pizza pizzaQuattroFormaggi = new("quattro formaggi", "pizza quatro formaggi", "/img/img-2.jpeg", 13);
+    Pizza pizzaBianca = new("bianca", "pizza bianca", "/img/img-3.jpeg", 15.5m);
+
+    List<Pizza> pizze = new() { pizzaMargherita, pizzaNapoli, pizzaBufala, pizzaMarinara, pizzaBianca, pizzaQuattroFormaggi };
+    Console.WriteLine("Ciao");
+    ;
+}
+
+
+
+<div class="text-center m-auto w-50">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Immagine</th>
+                <th scope="col">Prezzo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Pizza pizza in pizze)
+            {
+                <tr>
+                    <th scope="row">@pizza.Name</th>
+                    <td>@pizza.Description</td>
+                    <td><img width="100px" src="@pizza.Image" /></td>
+                    <td>@pizza.Price €</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+@section FooterSection{
+    <footer class="border-top footer text-white d-flex align-items-center">
+        <div class="container ">
+            &copy; 2022 - Pizzeria da Davide - <a class="text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+}

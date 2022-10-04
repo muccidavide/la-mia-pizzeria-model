@@ -1,0 +1,35 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.nav.navbar-nav.navbar-right li a {
+    color: white;
+}
+
+main {
+    padding: 2rem 0;
+    min-height: 88vh;
+}
+
+footer, header{
+    height: 50px;
+    color: white;
+    background-color: black;
+    text-align:center;
+}

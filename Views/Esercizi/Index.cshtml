@@ -1,0 +1,57 @@
+﻿
+@{
+    string name = "Davide";
+    string lastName = "Mucci";
+    int IntegerSum(int number){
+        int sum = 0;
+        for(int i=0; i < number; i++){
+            sum += number - i;
+
+        }
+        return sum;
+    }
+
+    string dante = "nel mezzo del cammin di nostra vita";
+    int count = dante.Count(f => f == 'a');
+
+    List<int> numbers = new(){}; 
+    while(numbers.Count() < 20){
+        int randNumber = new Random().Next(0, 91);
+        numbers.Add(randNumber);
+    }
+
+    List<int> NumbersInRange(List<int> numbers, int minValue, int maxValue){
+        List<int> numberList = new() { };
+    @foreach (int number in numbers)
+        {
+    @if (number > minValue & number < maxValue)
+            {
+                numberList.Add(number);
+            }
+        }
+        return numberList;
+    }
+}
+
+<h1>Esercizi:</h1>
+<h2>@name @lastName</h2>
+<p>@IntegerSum(13)</p>
+<p>@count</p>
+<p>
+    @foreach(int number in NumbersInRange(numbers, 20,70)){
+        @number;
+        <br />
+    }
+</p>
+<p>
+    @DateTime.Now.ToString("yyyy/mm/dd HH:mm:ss");
+</p>
+<p>
+    @DateTime.Now.DayOfWeek;
+</p>
+<p>
+    @DateTime.Now.AddDays(-7.0);
+</p>
+<p>
+    @DateTime.Now.AddDays(365.0).DayOfWeek;
+</p>
